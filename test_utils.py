@@ -13,11 +13,11 @@ class TestUtils(unittest.TestCase):
             utils.fact(-4)
     
     def test_roots(self):
-        self.assertEqual(utils.fact(1,-2,1),(-1,-1))
-        self.assertIsInstance(utils.roots(1,-2,1),tuple)
+        self.assertEqual(utils.roots(1,-2,1),(0,0))
+        self.assertEqual(type(utils.roots(1,-2,1)),tuple)
     
     def test_integrate(self):
-        pass
+        self.assertEqual(utils.integrate('x ** 2 - 1', -1, 1), -1.3333)
 
 if __name__ == '__main__':
     suite = unittest.TestLoader().loadTestsFromTestCase(TestUtils)
